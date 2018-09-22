@@ -9,6 +9,7 @@ class Api::TasksController < ApplicationController
   # POST /tasks
   def create
     @task = Task.new(task_params)
+
     if @task.save
       render :show, status: :created
     else
