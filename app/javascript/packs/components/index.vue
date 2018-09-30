@@ -28,7 +28,8 @@
       <ul class="collection">
         <li v-for="task in tasks" v-if="task.is_done" v-bind:id="'row_task_'
           + task.id" class="collection-item">
-          <input type="checkbox" v-bind:id="'task_' + task.id" checked="checked"/>
+          <!-- <input type="checkbox" v-bind:id="'task_' + task.id" checked="checked"/> -->
+          <input type="checkbox" v-on:change="removeTask(task.id)" v-bind:id="'task_' + task.id"/>
           <label v-bind:for="'task_' + task.id"  class="line-through">{{ task.name }}</label>
         </li>
       </ul>
@@ -91,6 +92,13 @@
         el_clone.getElementsByTagName('label')[0].classList.remove('word-color-black');
         var li = document.querySelector('#finished-tasks > ul > li:first-child');
         document.querySelector('#finished-tasks > ul').insertBefore(el_clone, li);
+      },
+      removeTask: function(task_id){
+        axios.delete('/api/tasks/' + task_id).then((response) => {
+
+        }, (error) => {
+          console.log(error);
+        });
       }
     }
   }
