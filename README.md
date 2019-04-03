@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Vue.jsとRailsでTODOアプリのチュートリアルみたいなものを作ってみた 
+https://qiita.com/naoki85/items/51a8b0f2cbf949d08b11
 
-Things you may want to cover:
+を参考にvueとRailsに触りました。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+削除する機能がなくて違和感があったので削除機能を追加しました。
